@@ -4,8 +4,8 @@ import java.io.InputStreamReader;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class DataInput {
-    public static int MAX_VAL = 10000;
-    public static int MIN_VAL = -10000;
+    public static int MAX_VAL = 10;
+    public static int MIN_VAL = -10;
 
     private static void writeText(String wr){
         if (wr == null)
