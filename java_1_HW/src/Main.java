@@ -41,10 +41,15 @@ public class Main {
         if (students == null || students.length == 0) {
             return;
         }
+        int counter = 0;
         for (int i = 0; i < students.length; i++) {
             if (students[i].charAt(0) == firstLetter) {
                 System.out.print(students[i] + " ");
+                counter++;
             }
+        }
+        if (counter == 0) {
+            System.out.println("No students found");
         }
     }
 }
