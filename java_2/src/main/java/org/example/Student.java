@@ -44,21 +44,22 @@ public class Student {
     public void toStringGrades() {
         if (this.grades == null)
             return;
+        System.out.print("Grades: ");
         for (int i = 0; i < this.grades.length; i++) {
             System.out.print(this.grades[i] + " ");
         }
     }
 
     public double getAverageGrades() {
-        return DataInput.averageOfIntArray(this.grades);
+        return Utils.averageOfIntArray(this.grades);
     }
 
     public int maxGrade() {
-        return DataInput.maxOfIntArray(this.grades);
+        return Utils.maxOfIntArray(this.grades);
     }
 
     public int minGrade() {
-        return DataInput.minOfIntArray(this.grades);
+        return Utils.minOfIntArray(this.grades);
     }
 
     public int amountOfStudentsAboveAvgGrade() {
@@ -76,12 +77,12 @@ public class Student {
     public int amountOfStudentsBelowAvgGrade() {
         if (this.grades == null || this.grades.length == 0)
             return -1;
-        int count = 0;
+        int counter = 0;
         for (int i = 0; i < this.grades.length; i++) {
             if (this.grades[i] < getAverageGrades())
-                count++;
+                counter++;
         }
-        return count;
+        return counter;
     }
 
     public int amountOfExcellentGrades() {
@@ -130,7 +131,7 @@ public class Student {
     }
 
     public int[] printGradesDESC() {
-        DataInput.sortIntArrayDESC(this.grades);
+        Utils.sortIntArrayDESC(this.grades);
         System.out.print("Sorted grades in DESC: ");
         DataInput.printIntArray(this.grades);
         return this.grades;
@@ -138,13 +139,13 @@ public class Student {
 
 
     public int[] printGradesASC() {
-        DataInput.sortIntArrayASC(this.grades);
+        Utils.sortIntArrayASC(this.grades);
         System.out.print("Sorted grades in ASC: ");
         DataInput.printIntArray(this.grades);
         return this.grades;
     }
 
     public boolean isSortedGrades(){
-        return DataInput.isSorted(this.grades);
+        return Utils.isSorted(this.grades);
     }
 }
