@@ -148,4 +148,16 @@ public class Student {
     public boolean isSortedGrades(){
         return Utils.isSorted(this.grades);
     }
+
+    public static void main(String [] args) {
+        int students = DataInput.getNotNegativeInt("Amount of students: ");
+        int [] array = new int [students];
+        for (int i = 0; i < students; i++) {
+            array[i] = DataInput.getNotNegativeInt("Grade: ");
+        }
+        Student student = new Student();
+        student.setGrades(array);
+        System.out.println("Desc grades:" + student.printGradesDESC());
+        System.out.println("ASc grades:" + student.printGradesASC());
+    }
 }

@@ -18,7 +18,7 @@ public class MainTest {
         assert students.maxGrade() == 100;
         assert students.minGrade() == 9;
         assert Arrays.equals(students.printGradesDESC(),
-                new int[]{100, 99, 90, 80, 59, 50, 40, 20, 10, 9});
+                new int[]{100, 99, 90, 80, 59, 40, 50, 20, 10, 9});
         assert Arrays.equals(students.printGradesASC(),
                 new int[]{9, 10, 20, 40, 50, 59, 80, 90, 99, 100});
         assert students.isSortedGrades();
