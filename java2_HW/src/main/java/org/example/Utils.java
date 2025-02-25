@@ -3,6 +3,12 @@ package org.example;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Utils {
+
+    public static void main(String [] args) {
+        double []arr = quickSortForDouble(new double[] {5.0, 4, 2, 1, 3, 7, 4}, 0, 6);
+        DataInput.printDoubleArray(arr);
+    }
+
     public static int MAX_VAL = 10000;
     public static int MIN_VAL = -10000;
 
@@ -190,6 +196,8 @@ public class Utils {
 
     public static double[] quickSortForDouble(double [] a, int beginIndex, int endIndex ){
         if (beginIndex < endIndex) {
+            DataInput.printDoubleArray(a);
+            System.out.println();
             int dividingIndex = getDividingIndexDouble(a, beginIndex, endIndex);
             quickSortForDouble(a, beginIndex, dividingIndex - 1);
             quickSortForDouble(a, dividingIndex + 1, endIndex);
@@ -208,6 +216,7 @@ public class Utils {
             }
         }
         swapDoubles(a, i + 1, endIndex);
+
         return i + 1;
     }
 
@@ -275,6 +284,7 @@ public class Utils {
             }
         }
         swapStudents(a, i + 1, endIndex);
+
         return i + 1;
     }
 

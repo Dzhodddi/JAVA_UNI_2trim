@@ -129,6 +129,13 @@ public final class DataInput {
             System.out.print(a[i]+" ");
         }
     }
+    public static void printDoubleArray(double[] a) {
+        if (a == null)
+            return;
+        for (int i = 0; i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
 
     public  static void readDoubleArray(double[] a) {
         for (int i = 0; i < a.length;i++){
