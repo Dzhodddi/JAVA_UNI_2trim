@@ -60,7 +60,7 @@ class GetFactorial{
         if (n > maxCounterOfFactorial && arrayOfFactorials[maxCounterOfFactorial] != null) {
             System.out.println("From cash");
             BigInteger difference = BigInteger.ONE;
-            for (int i = maxCounterOfFactorial; i <= n; i++)
+            for (int i = maxCounterOfFactorial + 1; i <= n; i++)
                 difference = difference.multiply(BigInteger.valueOf(i));
 
             arrayOfFactorials[n] = arrayOfFactorials[maxCounterOfFactorial]
@@ -98,9 +98,9 @@ public class Main {
                     if (number == -1)
                         break;
                     GetFactorial factorial = new GetFactorial(number);
-                    System.out.println("value of factorial: " + factorial.factorial());  // might be in a hash
+                    System.out.println("value of factorial: " + factorial.factorial());  // might be in a cash
                     System.out.println();
-                    System.out.println("value of factorial: " +  factorial.factorial()); // must be in a hash
+                    System.out.println("value of factorial: " +  factorial.factorial()); // must be in a cash
                     System.out.println();
                     break;
                 default:

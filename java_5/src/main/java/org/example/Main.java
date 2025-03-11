@@ -222,10 +222,11 @@ class MotorBike extends Vehicle {
 class Ferrari extends Vehicle {
 
     Ferrari(Engine engine, Door [] doors, Wheel [] wheels, Window [] windows) {
-        super(0, 3, 1, engine, doors, wheels, windows);
+        super(0, 4, 1, engine, doors, wheels, windows);
         for (int i = 0; i <= 5; i++)
             engine.upgradeEngine();
     }
+
     public void isFasterThanMaxVerstappen() {
         if (this.getSpeed() > 300) {
             System.out.println("~~~ WE ARE THE CHAMPIONS!! ~~~");

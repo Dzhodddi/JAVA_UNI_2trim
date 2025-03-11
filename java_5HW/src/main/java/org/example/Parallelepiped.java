@@ -4,12 +4,26 @@ package org.example;
 public class Parallelepiped {
 	private Point A;
 	private Point B;
+	private Point A1;
 	private Point D;
 	private double sideAA1;
 	private double sideAB;
 	private double sideAD;
 	private double angleA1AB;
 	private double angleBAD;
+
+	public Parallelepiped(Point A, Point B, Point D, Point A1) {
+		this.A = A;
+		this.B = B;
+		this.D = D;
+		this.A1 = A1;
+		this.sideAA1 = A.lengthBetweenPoints(A1);
+		System.out.println(sideAA1);
+		this.angleA1AB = Math.toRadians(90);
+		this.sideAB = A.lengthBetweenPoints(B);
+		this.sideAD = A.lengthBetweenPoints(D);
+		this.angleBAD = findAngleBAD();
+	}
 	public Parallelepiped(Point A, Point B, Point D, double sideAA1, double angleA1AB) {
 		this.A = A;
 		this.B = B;
@@ -46,7 +60,7 @@ public class Parallelepiped {
 	}
 
 	public double findHeight() {
-		return sideAA1 * Math.cos(angleA1AB);
+		return sideAA1 * Math.sin(angleA1AB);
 	}
 
 	public double findExtent() {

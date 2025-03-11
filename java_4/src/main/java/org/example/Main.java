@@ -5,7 +5,7 @@ import java.io.IOException;
 
 class MyString {
     private final String str;
-    private final int diff = 3000000;
+    private final int diff = 777;
     public MyString(String str) {
         this.str = str;
     }
