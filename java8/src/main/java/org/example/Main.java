@@ -99,6 +99,10 @@ abstract class CivilPlane implements Plane {
         this.yearOfProduction = "";
     }
 
+    public String toString() {
+        return "This is civil plane " + name + " with max speed: " + maxSpeed;
+    }
+
     abstract void setPlanesCreated(int planesCreated);
 
     abstract void addPlanesCreatedInYear(int planesCreated);
