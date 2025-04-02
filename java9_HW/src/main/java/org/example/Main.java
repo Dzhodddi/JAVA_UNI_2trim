@@ -125,7 +125,7 @@ public class Main {
         StringTokenizer stringTokenizer = new StringTokenizer();
 
         try {
-            String str = c.contentOfFile("input.txt");
+            String str = c.contentOfFile("input1.txt");
             String tokanizedStr = (stringTokenizer.tokenizeWithSpaces(str));
             MyStringArray stringArray = new MyStringArray(stringTokenizer.splitString(tokanizedStr));
             System.out.print("Amount of strings: " + stringArray.amountOfTokens());
