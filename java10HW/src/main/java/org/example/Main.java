@@ -38,6 +38,22 @@ class GenerateExamples {
             example += signs[i];
         }
         example += numbers[numbers.length - 1];
+        for (int i = 0; i < amountOfSigns; i++) {
+            int counter;
+            switch (signs[i]) {
+                case '+':
+                    counter = numbers[i] + numbers[i + 1];
+                    if (counter > maxNumber) {
+                        return generateExample(maxNumber);
+                    }
+                    break;
+                case '-':
+                    counter = numbers[i] - numbers[i + 1];
+                    if (counter > maxNumber || counter < 0) {
+                        return generateExample(maxNumber);
+                    }
+            }
+        }
         if (sum > maxNumber || sum < 0) {
             return generateExample(maxNumber);
         } else {
@@ -117,7 +133,6 @@ class Frame extends JFrame {
         sendButton.setFont(new Font("Arial", Font.PLAIN, 28));
         sendButton.setLayout(new FlowLayout(FlowLayout.CENTER));
         sendButton.addActionListener(e -> {
-            System.out.println(page);
             if (validateInput(maxNumberInput.getText(), amountOfExampleInput.getText())) {
                 remove(sendButton);
                 remove(maxNumberPanel);
@@ -145,7 +160,6 @@ class Frame extends JFrame {
                         } else if (examples[page - 1].getResult() == Integer.parseInt(textField.getText())) {
                             MessageDialogWithStringArray.showMessage("Correct!");
                             correctCounter++;
-                            System.out.println(correctCounter);
                         } else {
                             MessageDialogWithStringArray.showMessage("Incorrect");
                         }
@@ -212,7 +226,9 @@ class Frame extends JFrame {
     private static boolean validateInput(String maxNumber, String amountOfExamples) {
         int intAmountOfExamples;
         try {
-            Integer.parseInt(maxNumber);
+            int max = Integer.parseInt(maxNumber);
+            if (max < 0)
+                return false;
         } catch (NumberFormatException e) {
             return false;
         }
