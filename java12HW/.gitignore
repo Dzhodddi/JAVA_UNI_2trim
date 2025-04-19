@@ -36,3 +36,15 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/baz.java
+/dict.txt
+/don.go
+/don1.go
+/fizbaz.lua
+/fizz.c
+/fizz.cpp
+/foo.txt
+/main.py
+/py.kotlin
+/test.txt
+/test1.py
